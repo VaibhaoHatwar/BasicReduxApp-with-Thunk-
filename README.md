@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Basic Redux App (with Thunk)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is made to practice basic Redux with Thunk middleware.
 
-## Available Scripts
+## Redux
 
-In the project directory, you can run:
+A Predictable State Container for JS Apps
 
-### `npm start`
+### `Predictable`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Redux helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### `Centralized`
 
-### `npm test`
+Centralizing your application's state and logic enables powerful capabilities like undo/redo, state persistence, and much more.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `Debuggable`
 
-### `npm run build`
+The Redux DevTools make it easy to trace when, where, why, and how your application's state changed. Redux's architecture lets you log changes, use "time-travel debugging", and even send complete error reports to a server.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `Flexible`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Redux works with any UI layer, and has a large ecosystem of addons to fit your needs.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## React-Redux
 
-### `npm run eject`
+Official React bindings for Redux
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### `Official`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+React Redux is maintained by the Redux team, and kept up-to-date with the latest APIs from Redux and React.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### `Predictable`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Designed to work with React's component model. You define how to extract the values your component needs from Redux, and your component updates automatically as needed.
 
-## Learn More
+### `Encapsulated`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Provides APIs that enable your components to interact with the Redux store, so you don't have to write that logic yourself.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### `Optimized`
 
-### Code Splitting
+Automatically implements complex performance optimizations, so that your own component only re-renders when the data it needs has actually changed.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## What is a "thunk"?
 
-### Analyzing the Bundle Size
+The word "thunk" is a programming term that means "a piece of code that does some delayed work". Rather than execute some logic now, we can write a function body or code that can be used to perform the work later.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+For Redux specifically, "thunks" are a pattern of writing functions with logic inside that can interact with a Redux store's dispatch and getState methods.
 
-### Making a Progressive Web App
+Using thunks requires the redux-thunk middleware to be added to the Redux store as part of its configuration.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thunks are the standard approach for writing async logic in Redux apps, and are commonly used for data fetching. However, they can be used for a variety of tasks, and can contain both synchronous and asynchronous logic.
